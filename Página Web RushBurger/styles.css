@@ -165,9 +165,9 @@ body {
 
 .category-title {
     font-family: var(--font-titulos);
-    font-size: clamp(1.5rem, 5vw, 3rem); /* Reducido para móviles */
+    font-size: clamp(2rem, 6vw, 3.5rem); /* Reducido para móviles */
     color: var(--amarillo-principal);
-    margin-bottom: 2rem; /* Reducido para móviles */
+    margin-bottom: 2.5rem; /* Reducido para móviles */
     text-align: center;
     position: relative;
     display: inline-block;
@@ -363,3 +363,4 @@ body {
         font-size: 1.3rem; /* Más pequeño para móviles muy pequeños */
     }
 }
+
