@@ -57,7 +57,7 @@ body {
 
 .scroll-down-arrow {
     position: absolute;
-    bottom: 70px; /* Ajustado para que sea visible en móviles */
+    bottom: 90px; /* Ajustado para que sea visible en móviles */
     color: var(--amarillo-principal);
     animation: bounce 2s infinite;
     z-index: 1000; /* Asegura que esté encima de otros elementos */
@@ -350,4 +350,5 @@ body {
         padding: 0.4rem 0.8rem; /* Reduce el padding para ahorrar espacio */
     }
 }
+
 
