@@ -42,29 +42,29 @@ body {
 
 .hero-logo {
     font-family: var(--font-titulos);
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-size: clamp(2rem, 8vw, 5rem); /* Reducido para móviles */
     font-weight: 900;
     color: var(--amarillo-principal);
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-slogan {
-    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-size: clamp(0.8rem, 3vw, 1.2rem); /* Reducido para móviles */
     color: var(--texto-principal);
-    margin-top: 1rem;
+    margin-top: 0.5rem; /* Reducido espacio */
     font-weight: 500;
 }
 
 .scroll-down-arrow {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px; /* Ajustado para móviles */
     color: var(--amarillo-principal);
     animation: bounce 2s infinite;
 }
 
 .scroll-down-arrow svg {
-    width: 40px;
-    height: 40px;
+    width: 30px; /* Reducido para móviles */
+    height: 30px;
 }
 
 @keyframes bounce {
@@ -72,17 +72,17 @@ body {
         transform: translateY(0);
     }
     40% {
-        transform: translateY(-20px);
+        transform: translateY(-15px);
     }
     60% {
-        transform: translateY(-10px);
+        transform: translateY(-7px);
     }
 }
 
 /* ===== BARRA DE NAVEGACIÓN ===== */
 .category-nav {
     background-color: transparent;
-    padding: 1rem 0;
+    padding: 0.7rem 0; /* Reducido para móviles */
     text-align: center;
     position: absolute;
     top: 100vh;
@@ -97,7 +97,7 @@ body {
     background-color: rgba(30, 30, 30, 0.85);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 1rem 0;
+    padding: 0.7rem 0; /* Reducido para móviles */
     animation: slideDown 0.5s ease-out;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -105,7 +105,7 @@ body {
 .nav-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px; /* Reducido para móviles */
     flex-wrap: wrap;
 }
 
@@ -114,10 +114,11 @@ body {
     text-decoration: none;
     font-family: var(--font-titulos);
     font-weight: 700;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem; /* Reducido para móviles */
     border-radius: 50px;
     transition: all 0.3s ease;
     position: relative;
+    font-size: 0.8rem; /* Reducido para móviles */
 }
 
 .category-nav a:after {
@@ -149,25 +150,24 @@ body {
     }
 }
 
-
 /* ===== CONTENEDOR DEL MENÚ Y CATEGORÍAS ===== */
 .menu-container {
-    padding: 8rem 5% 4rem 5%;
+    padding: 6rem 5% 3rem 5%; /* Reducido para móviles */
 }
 
 .menu-category {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem; /* Reducido para móviles */
 }
 
 #hamburguesas {
-    margin-bottom: 4rem; /* Separación adicional antes de la siguiente sección */
+    margin-bottom: 3rem; /* Separación adicional antes de la siguiente sección */
 }
 
 .category-title {
     font-family: var(--font-titulos);
-    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-size: clamp(1.5rem, 5vw, 3rem); /* Reducido para móviles */
     color: var(--amarillo-principal);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem; /* Reducido para móviles */
     text-align: center;
     position: relative;
     display: inline-block;
@@ -189,11 +189,11 @@ body {
 .highlight-note {
     background-color: rgba(237, 184, 19, 0.1); /* Fondo amarillo claro */
     color: var(--amarillo-principal); /* Color del texto */
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1rem; /* Reducido para móviles */
     border-left: 4px solid var(--amarillo-principal); /* Línea lateral */
     font-weight: 500;
     text-align: center;
-    margin: 1.5rem auto;
+    margin: 1rem auto; /* Reducido para móviles */
     max-width: 800px;
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -202,55 +202,78 @@ body {
 /* ===== GRID DE PRODUCTOS Y TARJETAS ===== */
 .product-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr; /* 1 columna en móviles muy pequeños */
+    gap: 1rem; /* Reducido para móviles */
+}
+
+/* Mostrar 2 columnas en móviles medianos y grandes (350px en adelante) */
+@media (min-width: 350px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* En tablets y escritorio */
+@media (min-width: 600px) {
+    .nav-container {
+        gap: 20px; /* Aumentado para tablets */
+    }
+}
+
+@media (min-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
+    }
+    .nav-container {
+        gap: 30px; /* Aumentado para escritorio */
+    }
 }
 
 .product-card {
     background-color: var(--card-background);
-    border-radius: 12px;
+    border-radius: 10px; /* Reducido para móviles */
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reducido para móviles */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px); /* Reducido para móviles */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Reducido para móviles */
 }
 
 .product-card img {
     width: 100%;
-    height: 200px;
+    height: 180px; /* Reducido para móviles */
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
 }
 
 .product-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03); /* Reducido para móviles */
 }
 
 .product-info {
-    padding: 1.5rem;
+    padding: 1rem; /* Reducido para móviles */
 }
 
 .product-info h3 {
     font-family: var(--font-titulos);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem; /* Reducido para móviles */
+    margin-bottom: 0.3rem; /* Reducido para móviles */
 }
 
 .product-info p {
     color: var(--texto-secundario);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    font-size: 0.8rem; /* Reducido para móviles */
+    margin-bottom: 0.5rem; /* Reducido para móviles */
 }
 
 .price {
     display: block;
     font-family: var(--font-titulos);
-    font-size: 1.75rem;
+    font-size: 1.5rem; /* Reducido para móviles */
     font-weight: 700;
     color: var(--amarillo-principal);
     text-align: right;
@@ -259,10 +282,10 @@ body {
 /* ===== FOOTER ===== */
 .footer {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem; /* Reducido para móviles */
     background-color: #0c0c0c;
     color: var(--gris-neutro);
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Reducido para móviles */
 }
 
 /* ===== DISEÑO RESPONSIVE (MOBILE-FIRST) ===== */
@@ -284,5 +307,59 @@ body {
     }
     .nav-container {
         gap: 40px;
+    }
+}
+
+/* ===== AJUSTE PARA MÓVILES: REDUCIR TAMAÑO DE FUENTE EN NAVEGACIÓN ===== */
+@media (max-width: 600px) {
+    .category-nav a {
+        font-size: 0.7rem; /* Reduce el tamaño de fuente en móviles */
+        padding: 0.3rem 0.6rem; /* Reduce el padding para ahorrar espacio */
+    }
+}
+
+/* ===== MEJORAS ADICIONALES PARA MÓVILES ===== */
+
+/* Asegurar que las imágenes sean cuadradas en móviles */
+@media (max-width: 600px) {
+    .product-card img {
+        height: 160px; /* Altura fija para hacerlas más cuadradas */
+        object-fit: cover;
+    }
+}
+
+/* Ajustar el título del hero en móviles muy pequeños */
+@media (max-width: 400px) {
+    .hero-logo {
+        font-size: 2rem; /* Tamaño fijo para móviles muy pequeños */
+    }
+    .hero-slogan {
+        font-size: 0.8rem;
+    }
+}
+
+/* Ajustar el padding del contenedor principal en móviles */
+@media (max-width: 450px) {
+    .menu-container {
+        padding: 5rem 4% 2rem 4%; /* Reducido para móviles muy pequeños */
+    }
+}
+
+/* Ajustar el tamaño de las tarjetas en móviles */
+@media (max-width: 380px) {
+    .product-card {
+        border-radius: 8px; /* Más pequeño para móviles muy pequeños */
+    }
+    .product-info {
+        padding: 0.8rem; /* Más pequeño para móviles muy pequeños */
+    }
+    .product-info h3 {
+        font-size: 1rem; /* Más pequeño para móviles muy pequeños */
+    }
+    .product-info p {
+        font-size: 0.7rem; /* Más pequeño para móviles muy pequeños */
+    }
+    .price {
+        font-size: 1.3rem; /* Más pequeño para móviles muy pequeños */
     }
 }
