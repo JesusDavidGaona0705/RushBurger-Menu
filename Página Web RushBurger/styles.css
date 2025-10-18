@@ -359,4 +359,14 @@ body {
     .price {
         font-size: 1.3rem; /* Precio más pequeño */
     }
+    /* ===== AJUSTE PARA EVITAR SOBREPOSICIÓN DEL TÍTULO CON LA BARRA DE NAVEGACIÓN ===== */
+#hamburguesas .category-title {
+    margin-top: 2rem; /* Añade espacio arriba para evitar que se solape con la barra de navegación */
 }
+
+/* Si quieres aplicarlo a todas las secciones, usa esto en lugar de lo anterior */
+.menu-category .category-title {
+    margin-top: 2rem;
+}
+}
+
