@@ -313,8 +313,8 @@ body {
 /* ===== AJUSTE PARA MÓVILES: REDUCIR TAMAÑO DE FUENTE EN NAVEGACIÓN ===== */
 @media (max-width: 600px) {
     .category-nav a {
-        font-size: 0.7rem; /* Reduce el tamaño de fuente en móviles */
-        padding: 0.3rem 0.6rem; /* Reduce el padding para ahorrar espacio */
+        font-size: 0.85rem; /* Reduce el tamaño de fuente en móviles */
+        padding: 0.4rem 0.8rem; /* Reduce el padding para ahorrar espacio */
     }
 }
 
@@ -363,4 +363,5 @@ body {
         font-size: 1.3rem; /* Más pequeño para móviles muy pequeños */
     }
 }
+
 
