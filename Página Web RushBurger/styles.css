@@ -105,8 +105,16 @@ body {
 .nav-container {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Reducido para móviles */
+    gap: 8px; /* Reducido para móviles */
     flex-wrap: wrap;
+}
+
+/* Para pantallas muy pequeñas, reducir aún más el padding de los enlaces */
+@media (max-width: 400px) {
+    .category-nav a {
+        padding: 0.3rem 0.6rem; /* Más pequeño para evitar solapamiento */
+        font-size: 0.75rem; /* Ligeramente más pequeño */
+    }
 }
 
 .category-nav a {
@@ -363,5 +371,6 @@ body {
         font-size: 1.3rem; /* Más pequeño para móviles muy pequeños */
     }
 }
+
 
 
