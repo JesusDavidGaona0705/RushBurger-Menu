@@ -57,9 +57,10 @@ body {
 
 .scroll-down-arrow {
     position: absolute;
-    bottom: 20px; /* Ajustado para móviles */
+    bottom: 50px; /* Ajustado para que sea visible en móviles */
     color: var(--amarillo-principal);
     animation: bounce 2s infinite;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
 }
 
 .scroll-down-arrow svg {
@@ -109,14 +110,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* Para pantallas muy pequeñas, reducir aún más el padding de los enlaces */
-@media (max-width: 400px) {
-    .category-nav a {
-        padding: 0.3rem 0.6rem; /* Más pequeño para evitar solapamiento */
-        font-size: 0.75rem; /* Ligeramente más pequeño */
-    }
-}
-
 .category-nav a {
     color: var(--texto-principal);
     text-decoration: none;
@@ -163,6 +156,11 @@ body {
     padding: 6rem 5% 3rem 5%; /* Reducido para móviles */
 }
 
+/* Ajuste adicional cuando la barra está fija */
+.category-nav.sticky ~ .menu-container {
+    padding-top: 6rem; /* Ajusta según necesites */
+}
+
 .menu-category {
     margin-bottom: 4rem; /* Reducido para móviles */
 }
@@ -173,16 +171,16 @@ body {
 
 .category-title {
     font-family: var(--font-titulos);
-    font-size: clamp(2rem, 6vw, 3.5rem); /* Reducido para móviles */
+    font-size: clamp(2rem, 6vw, 3.5rem); /* Tamaño original */
     color: var(--amarillo-principal);
-    margin-bottom: 2.5rem; /* Reducido para móviles */
+    margin-top: 3rem; /* Añadido para bajar el título */
+    margin-bottom: 2.5rem;
     text-align: center;
     position: relative;
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
 }
-
 .category-title::after {
     content: '';
     position: absolute;
@@ -223,6 +221,9 @@ body {
 
 /* En tablets y escritorio */
 @media (min-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .nav-container {
         gap: 20px; /* Aumentado para tablets */
     }
@@ -296,36 +297,6 @@ body {
     font-size: 0.8rem; /* Reducido para móviles */
 }
 
-/* ===== DISEÑO RESPONSIVE (MOBILE-FIRST) ===== */
-
-/* Tablets */
-@media (min-width: 600px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .nav-container {
-        gap: 25px;
-    }
-}
-
-/* Escritorio */
-@media (min-width: 992px) {
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .nav-container {
-        gap: 40px;
-    }
-}
-
-/* ===== AJUSTE PARA MÓVILES: REDUCIR TAMAÑO DE FUENTE EN NAVEGACIÓN ===== */
-@media (max-width: 600px) {
-    .category-nav a {
-        font-size: 0.85rem; /* Reduce el tamaño de fuente en móviles */
-        padding: 0.4rem 0.8rem; /* Reduce el padding para ahorrar espacio */
-    }
-}
-
 /* ===== MEJORAS ADICIONALES PARA MÓVILES ===== */
 
 /* Asegurar que las imágenes sean cuadradas en móviles */
@@ -372,5 +343,10 @@ body {
     }
 }
 
-
-
+/* ===== AJUSTE PARA MÓVILES: REDUCIR TAMAÑO DE FUENTE EN NAVEGACIÓN ===== */
+@media (max-width: 600px) {
+    .category-nav a {
+        font-size: 0.85rem; /* Reduce el tamaño de fuente en móviles */
+        padding: 0.4rem 0.8rem; /* Reduce el padding para ahorrar espacio */
+    }
+}
