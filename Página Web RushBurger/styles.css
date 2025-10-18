@@ -351,4 +351,10 @@ body {
     }
 }
 
-
+/* ===== AJUSTE PARA PANTALLAS GRANDES (ESCRITORIO) ===== */
+@media (min-width: 992px) {
+    .category-nav a {
+        font-size: 1rem; /* Aumentado para escritorio */
+        padding: 0.6rem 1rem; /* Ajustado para mayor espacio */
+    }
+}
