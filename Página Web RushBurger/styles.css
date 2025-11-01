@@ -357,4 +357,12 @@ body {
         font-size: 1rem; /* Aumentado para escritorio */
         padding: 0.6rem 1rem; /* Ajustado para mayor espacio */
     }
+
+        .footer p:nth-child(2) {
+    color: var(--amarillo-principal); /* Mismo color que el logo */
+    font-weight: 500;
+    font-size: 0.85rem; /* Un poco más pequeño que el resto */
+    margin: 0.2rem 0; /* Espaciado vertical */
 }
+}
+
